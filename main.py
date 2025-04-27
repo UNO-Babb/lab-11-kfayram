@@ -21,12 +21,12 @@ def checker(env):
     global idleTime
     while True:
         while len(waitingShoppers) == 0:
-            idleTime += 1
+            idleTime += 0.2
             yield env.timeout(1) # wait a minute and check again
 
         customer = waitingShoppers.pop(0)
         items = customer[1]
-        checkoutTime = items // 10 + 1
+        checkoutTime = items // 30 + 1
         yield env.timeout(checkoutTime)
 
         eventLog.append((customer[0], customer[1], customer[2], customer[3], env.now))
@@ -36,7 +36,7 @@ def customerArrival(env):
     while True:
         customerNumber += 1
         env.process(shopper(env, customerNumber))
-        yield env.timeout(2) #New shopper every two minutes.
+        yield env.timeout(1,5) #New shopper every 1 to 5 minutes.
 
 def processResults():
     totalWait = 0

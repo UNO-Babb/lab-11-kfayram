@@ -1,0 +1,15 @@
+The amount max that a shopper brings to the check out is extended from 5 to 100 items to give a better representation of different peoples needs going to the store
+
+I changed the checker idle time down to 0.2 which would give more of a representation of an actual employee looking for customers
+
+10 items per minute for the checker to check items is really slow, even for a new employee so, 
+I bumped that number up to 30 which is 0.5 items per second so an item per 2 seconds which is more reasonable
+
+changed the timing of when a customer shows up from 2 to 1 - 5 minutes to mimic more busy/slow times in the store
+
+changed the number of checkers to 3 
+
+avg wait time down to roughly 3 minutes
+total idle time is down to 38 minutes
+these seem normal for a regular store
+
